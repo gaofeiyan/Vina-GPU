@@ -1,0 +1,23 @@
+Makefile：
+# Need to be modified according to different users
+WORK_DIR=/home/dbdx/Desktop/software//Vina-GPU-2.1/AutoDock-Vina-GPU-2.1
+BOOST_LIB_PATH=/home/dbdx/Desktop/software/boost_1_88_0
+OPENCL_LIB_PATH=/usr/local/cuda
+OPENCL_VERSION=-DOPENCL_3_0
+GPU_PLATFORM=-DNVIDIA_PLATFORM
+DOCKING_BOX_SIZE=-DSMALL_BOX
+注意目录
+
+
+
+https://github.com/DeltaGroupNJUPT/Vina-GPU/issues/27
+要安装Vina-GPU-2.1-main/AutoDock-Vina-GPU-2.1
+缺少编译软件时：
+find . -name "commonMacros.h"
+find . -name "parse_pdbqt.h"
+查找目录，然后
+export CXXFLAGS="-I./OpenCL/inc -I./lib"
+make source
+
+就成功安装了
+命令是：./AutoDock-Vina-GPU-2-1 --config ./*.config
